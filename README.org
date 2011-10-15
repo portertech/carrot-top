@@ -1,0 +1,25 @@
+* Getting started
+  : gem install carrot-top
+* Usage
+  : require "carrot-top"
+  : rabbitmq_info = CarrotTop.new(:host => "localhost", :port => 55672, :user => "user", :password => "password")
+  Various random bits of information that describe the whole system.
+  : rabbitmq_info.overview
+  A list of all open connections.
+  : rabbitmq_info.connections
+  A list of all open channels.
+  : rabbitmq_info.channels
+  A list of all exchanges.
+  : rabbitmq_info.exchanges
+  A list of all queues.
+  : rabbitmq_info.queues
+  A list of all bindings.
+  : rabbitmq_info.bindings
+  A list of all vhosts.
+  : rabbitmq_info.vhosts
+  A list of all users.
+  : rabbitmq_info.users
+  A list of all permissions for all users.
+  : rabbitmq_info.permissions
+* License
+  Carrot-Top is released under the MIT license.
