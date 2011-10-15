@@ -10,14 +10,14 @@ class CarrotTop
     end
     @ssl = options[:ssl] || false
     protocol = @ssl ? "https" : "http"
-    @rabbitmq_api = "#{protocol}://#{host}:#{port}/api"
+    @rabbitmq_api = "#{protocol}://#{options[:host]}:#{options[:port]}/api"
     @user = options[:user]
     @password = options[:password]
   end
 
   def query_api(options={})
     raise "You must supply an API path" if options[:path].nil?
-    URI.parse(@rabbitmq_api + options[:path])
+    uri = URI.parse(@rabbitmq_api + options[:path])
     http = Net::HTTP.new(uri.host, uri.port)
     if options[:ssl] == true
       http.use_ssl = true
@@ -29,7 +29,7 @@ class CarrotTop
     http.request(request)
   end
 
-  def self.method_missing(method, *args, &block)
+  def method_missing(method, *args, &block)
     response = self.query_api(:path => "/#{method}")
     JSON.parse(response.body)
   end
