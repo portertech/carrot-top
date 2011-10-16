@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
 
   s.rubyforge_project = "carrot-top"
 
-  s.files         = `git ls-files`.split("\n")
+  s.files         = `git ls-files`.split("\n").reject {|f| f =~ /(test|jpg)/}
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.require_paths = ["lib"]
 
