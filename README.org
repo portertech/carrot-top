@@ -22,6 +22,6 @@
   A list of all permissions for all users.
   : rabbitmq_info.permissions
 * License
-  Carrot-Top is released under the MIT license.
+  Carrot-Top is released under the [[https://raw.github.com/portertech/carrot-top/master/MIT-LICENSE.txt][MIT license]].
 * Nothing to do with this guy
-[[https://github.com/portertech/carrot-top/raw/master/carrot-top.jpg]]
+  [[https://github.com/portertech/carrot-top/raw/master/carrot-top.jpg]]
