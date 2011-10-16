@@ -31,6 +31,10 @@ class CarrotTop
 
   def method_missing(method, *args, &block)
     response = self.query_api(:path => "/#{method}")
-    JSON.parse(response.body)
+    begin
+      JSON.parse(response.body)
+    rescue JSON::ParserError
+      Hash.new
+    end
   end
 end
