@@ -23,3 +23,5 @@
   : rabbitmq_info.permissions
 * License
   Carrot-Top is released under the MIT license.
+* Nothing to do with this guy
+[[https://github.com/portertech/carrot-top/raw/master/carrot-top.jpg]]
