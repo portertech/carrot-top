@@ -2,7 +2,7 @@ $:.push File.expand_path("../lib", __FILE__)
 
 Gem::Specification.new do |s|
   s.name        = "carrot-top"
-  s.version     = "0.0.5"
+  s.version     = "0.0.6.beta"
   s.authors     = ["Sean Porter"]
   s.email       = ["portertech@gmail.com"]
   s.homepage    = "https://github.com/portertech/carrot-top"
