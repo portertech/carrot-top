@@ -15,6 +15,10 @@
   :   :password => "password"
   : )
 
+  Use SSL if the management API supports it (optional)
+
+  : :ssl => true
+
   Various random bits of information that describe the whole system.
 
   : carrot_top.overview
