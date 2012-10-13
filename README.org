@@ -1,27 +1,59 @@
-* Getting started
+[[https://secure.travis-ci.org/portertech/carrot-top.png]]
+
+* Install
+
   : gem install carrot-top
+
 * Usage
+
   : require "carrot-top"
-  : rabbitmq_info = CarrotTop.new(:host => "localhost", :port => 55672, :user => "user", :password => "password")
+  : 
+  : carrot_top = CarrotTop.new(
+  :   :host => "localhost",
+  :   :port => 55672,
+  :   :user => "user",
+  :   :password => "password"
+  : )
+
   Various random bits of information that describe the whole system.
-  : rabbitmq_info.overview
+
+  : carrot_top.overview
+
   A list of all open connections.
-  : rabbitmq_info.connections
+
+  : carrot_top.connections
+
   A list of all open channels.
-  : rabbitmq_info.channels
+
+  : carrot_top.channels
+
   A list of all exchanges.
-  : rabbitmq_info.exchanges
+
+  : carrot_top.exchanges
+
   A list of all queues.
-  : rabbitmq_info.queues
+
+  : carrot_top.queues
+
   A list of all bindings.
-  : rabbitmq_info.bindings
+
+  : carrot_top.bindings
+
   A list of all vhosts.
-  : rabbitmq_info.vhosts
+
+  : carrot_top.vhosts
+
   A list of all users.
-  : rabbitmq_info.users
+
+  : carrot_top.users
+
   A list of all permissions for all users.
-  : rabbitmq_info.permissions
+
+  : carrot_top.permissions
+
 * License
   Carrot-Top is released under the [[https://raw.github.com/portertech/carrot-top/master/MIT-LICENSE.txt][MIT license]].
+
 * Nothing to do with this guy
+
   [[https://github.com/portertech/carrot-top/raw/master/carrot-top.jpg]]
