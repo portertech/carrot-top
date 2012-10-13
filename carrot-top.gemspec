@@ -1,4 +1,3 @@
-# -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
 
 Gem::Specification.new do |s|
@@ -17,6 +16,5 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   s.add_dependency "json"
-  s.add_development_dependency "minitest"
   s.add_development_dependency "webmock"
 end
