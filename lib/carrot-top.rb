@@ -19,6 +19,22 @@ class CarrotTop
     @rabbitmq_api = "#{protocol}://#{credentials}@#{location}/api"
   end
 
+  def query_api(options={})
+    raise ArgumentError, "You must supply an API path" if options[:path].nil?
+    fetch_uri(@rabbitmq_api + options[:path])
+  end
+
+  def method_missing(method, *args, &block)
+    response = self.query_api(:path => "/#{method}")
+    begin
+      JSON.parse(response.body)
+    rescue JSON::ParserError
+      Hash.new
+    end
+  end
+
+  private
+
   def fetch_uri(uri, limit=5)
     raise ArgumentError, "HTTP redirect too deep" if limit == 0
     url = URI.parse(uri)
@@ -44,17 +60,4 @@ class CarrotTop
     end
   end
 
-  def query_api(options={})
-    raise ArgumentError, "You must supply an API path" if options[:path].nil?
-    fetch_uri(@rabbitmq_api + options[:path])
-  end
-
-  def method_missing(method, *args, &block)
-    response = self.query_api(:path => "/#{method}")
-    begin
-      JSON.parse(response.body)
-    rescue JSON::ParserError
-      Hash.new
-    end
-  end
 end
