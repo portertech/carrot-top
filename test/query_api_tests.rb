@@ -45,6 +45,6 @@ describe CarrotTop do
     options.delete(:port)
     lambda {
       CarrotTop.new(options)
-    }.must_raise(RuntimeError)
+    }.must_raise(ArgumentError)
   end
 end
