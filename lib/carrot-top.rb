@@ -35,7 +35,10 @@ class CarrotTop
     when Net::HTTPSuccess
       response
     when Net::HTTPRedirection
-      fetch_uri(response["location"], limit - 1)
+      redirect_url = URI.parse(response["location"])
+      redirect_url.user = url.user
+      redirect_url.password = url.password
+      fetch_uri(redirect_url.to_s, limit - 1)
     else
       response.error!
     end
